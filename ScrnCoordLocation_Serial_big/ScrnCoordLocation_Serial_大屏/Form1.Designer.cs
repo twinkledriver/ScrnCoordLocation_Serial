@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTestSerialPort));
             this.buttonOpenport = new System.Windows.Forms.Button();
             this.ContentBox = new System.Windows.Forms.TextBox();
             this.buttonReset = new System.Windows.Forms.Button();
@@ -275,7 +276,6 @@
             this.checkBox1.TabIndex = 13;
             this.checkBox1.Text = "数据->鼠标定位";
             this.checkBox1.UseVisualStyleBackColor = true;
-           // this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label1
             // 
@@ -319,6 +319,7 @@
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonOpenport);
             this.Controls.Add(this.groupDataReceived);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTestSerialPort";
             this.Text = "串口调试助手 V0.1a";
             this.Load += new System.EventHandler(this.FormTestSerialPort_Load);

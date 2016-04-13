@@ -29,10 +29,10 @@ namespace serialport
             Array.Sort(ports);
             if(ports.Length!=0)
             comboPortNme.Text = ports[0];
-            comboBaudrate.Text = "9600";
+            comboBaudrate.Text = "115200";
             comboPortNme.Items.AddRange(ports);
             comboPortNme.SelectedIndex = comboPortNme.Items.Count > 0 ? 0 : -1;
-            comboBaudrate.SelectedIndex = comboBaudrate.Items.IndexOf("9600");
+            comboBaudrate.SelectedIndex = comboBaudrate.Items.IndexOf("115200");
             //初始化SerialPort对象
             comm.NewLine = "/r/n";
             comm.RtsEnable = true;
@@ -191,14 +191,22 @@ namespace serialport
         {
             String aa=builder.ToString();
             aa = aa.Replace(" ","");
-
+            String aax_Hex;
+            String aay_Hex;
             //MessageBox.Show(aa);
            // bb=aa.strToToHexByte();
 
-            
 
-            String aax_Hex = aa.Substring(aa.Length-22, 4);
-            String aay_Hex = aa.Substring(aa.Length -18 , 4);
+            try
+            {
+                aax_Hex = aa.Substring(aa.Length - 22, 4);
+                aay_Hex = aa.Substring(aa.Length - 18, 4);
+            }
+            catch
+            {
+                return;
+            }
+           
 
             //MessageBox.Show(aax_Hex.ToString());
             //MessageBox.Show(aay_Hex.ToString());
