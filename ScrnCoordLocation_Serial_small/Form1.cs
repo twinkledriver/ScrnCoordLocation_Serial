@@ -189,14 +189,22 @@ namespace serialport
         {
             String aa=builder.ToString();
             aa = aa.Replace(" ","");
-
+            String aax_Hex;
+            String aay_Hex;
             //MessageBox.Show(aa);
            // bb=aa.strToToHexByte();
 
             
-
-            String aax_Hex = aa.Substring(aa.Length-10, 4);
-            String aay_Hex = aa.Substring(aa.Length -6 , 4);
+           try
+           {
+            aax_Hex = aa.Substring(aa.Length-10, 4);
+            aay_Hex = aa.Substring(aa.Length -6 , 4);
+           }
+            catch
+           {
+               return;
+           }
+            
 
             //MessageBox.Show(aax_Hex.ToString());
             //MessageBox.Show(aay_Hex.ToString());

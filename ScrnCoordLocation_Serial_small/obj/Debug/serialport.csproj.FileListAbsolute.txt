@@ -46,3 +46,15 @@ C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial
 C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial\obj\Debug\serialport.FormTestSerialPort.zh-CN.resources
 C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial\obj\Debug\serialport.csproj.GenerateResource.Cache
 C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial\obj\Debug\zh-CN\serialport.resources.dll
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\serialport.exe
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\serialport.pdb
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\bin\Debug\serialport.exe
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\bin\Debug\serialport.pdb
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\bin\Debug\zh-CN\serialport.resources.dll
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\serialport.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\serialport.FormTestSerialPort.resources
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\serialport.Properties.Resources.resources
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\serialport.FormTestSerialPort.zh-CN.resources
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\serialport.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\obj\Debug\zh-CN\serialport.resources.dll
+C:\Users\Administrator\Desktop\ScrnCoordLocation_Serial\ScrnCoordLocation_Serial_small\bin\Debug\serialport.exe.config
