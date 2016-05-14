@@ -9,14 +9,12 @@ using System.Windows.Forms;
 
 namespace serialport
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form                       //触摸测试 的窗口文件
     {
         public Form2()
         {
             InitializeComponent();
         }
-
-
 
 
         private void button1_Click(object sender, EventArgs e)

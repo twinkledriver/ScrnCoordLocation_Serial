@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
-using WindowsHook;
+using WindowsHook;                                                      //模拟 鼠标 要用的cs文件
 
 namespace serialport
 {
@@ -78,8 +78,7 @@ namespace serialport
 
                 //将接收到的数据追加到文本框末端，并将文本框滚动到末端
                 this.ContentBox.AppendText(builder.ToString());
-                
-              
+
                 //修改接收计数
                 this.labelReceiveCount.Text = "接收计数" + receive_count.ToString();
                
@@ -87,7 +86,6 @@ namespace serialport
                
             }));
             comm.Write(new byte[] { 0xFF, 0xFF, 0x04, 0x01, 0x01, 0x00, 0x00, 0xF9 }, 0, 8);
-
 
         }
 
@@ -191,22 +189,14 @@ namespace serialport
             comboPortNme.Items.AddRange(ports);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MoveCursor();
-        }
-
 
         private void MoveCursor()
         {
-            String aa=builder.ToString();
-            aa = aa.Replace(" ","");
+            String aa=builder.ToString();                               //提取 收到的 数据  字符串格式
+            aa = aa.Replace(" ","");                                    //去空格
             String aax_Hex;
             String aay_Hex;
             String aa_state_Hex;
-            //MessageBox.Show(aa);
-           // bb=aa.strToToHexByte();
-
 
             try
             {
@@ -217,117 +207,43 @@ namespace serialport
             }
             catch
             {
-                return;
+                return;                                              //规避 报错 （有时候数据发错 导致index 负数报错）
             }
            
 
-            int aax_decimal = Convert.ToInt32(aax_Hex, 16);
+            int aax_decimal = Convert.ToInt32(aax_Hex, 16);         //坐标x  string 转int 后边好定位
             int aay_decimal = Convert.ToInt32(aay_Hex, 16);
           
 
 
             this.Cursor = new Cursor(Cursor.Current.Handle);
-            Cursor.Position = new Point(aax_decimal, aay_decimal);
+            Cursor.Position = new Point(aax_decimal, aay_decimal);          //定位
 
             if (aa_state_Hex.Equals("01"))
             {
-                LeftDown();
+               SendMouseEvent.LeftDown();                                   //发送数据 状态位01 时  按下左键 模拟点击
             }
             else if (aa_state_Hex.Equals("04"))
             {
-                LeftUp();
+               SendMouseEvent.LeftUp();
             }
-           
-
         }
 
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            textBox1.Text = System.Windows.Forms.Control.MousePosition.X.ToString();
+            textBox1.Text = System.Windows.Forms.Control.MousePosition.X.ToString();            //x，y 坐标始终显示 用了定时器控件
             textBox2.Text = System.Windows.Forms.Control.MousePosition.Y.ToString();
         }
+
+                
+        Form2 b = new Form2(); 
+
+       private void button1_Click_2(object sender, EventArgs e)                    //打开 触摸测试的 窗口2
+       {
+            b.ShowDialog();
+       }
         
-                [DllImport("user32.dll")]
-                static extern void mouse_event(MouseEventFlag flags, int dx, int dy, uint data, UIntPtr extraInfo);
-                [Flags]
-                public enum MouseEventFlag : uint
-                {
-                    Move = 0x0001,
-                    LeftDown = 0x0002,
-                    LeftUp = 0x0004,
-                    RightDown = 0x0008,
-                    RightUp = 0x0010,
-                    MiddleDown = 0x0020,
-                    MiddleUp = 0x0040,
-                    XDown = 0x0080,
-                    XUp = 0x0100,
-                    Wheel = 0x0800,
-                    VirtualDesk = 0x4000,
-                    Absolute = 0x8000
-                }
-
-                public static void Send(MouseEventFlag mouseEventFlag, int dx, int dy, uint dwData)
-                {
-                    mouse_event(mouseEventFlag | MouseEventFlag.Absolute, dx, dy, dwData, UIntPtr.Zero);
-                }
-
-                public static void MoveTo(uint scceenTop, uint screenLeft)
-                {
-                    int x = scceenTop == 0 ? 0 : (int)((float)scceenTop / (float)Screen.PrimaryScreen.Bounds.Height * (float)65535);
-                    int y = screenLeft == 0 ? 0 : (int)((float)screenLeft / (float)Screen.PrimaryScreen.Bounds.Width * (float)65535);
-                    mouse_event(MouseEventFlag.Move | MouseEventFlag.Absolute, x, y, 0, UIntPtr.Zero);
-                }
-
-                public static void Click()
-                {
-                    LeftDown(); LeftUp();
-                }
-
-                public static void DoubleClick()
-                {
-                    Click(); Click();
-                }
-
-                public static void LeftDown()
-                {
-                    mouse_event(MouseEventFlag.LeftDown, 0, 0, 0, UIntPtr.Zero);
-                }
-
-                public static void LeftUp()
-                {
-                    mouse_event(MouseEventFlag.LeftUp, 0, 0, 0, UIntPtr.Zero);
-                }
-
-                public static void RightDown()
-                {
-                    mouse_event(MouseEventFlag.RightDown, 0, 0, 0, UIntPtr.Zero);
-                }
-
-                public static void RightUp()
-                {
-                    mouse_event(MouseEventFlag.RightUp, 0, 0, 0, UIntPtr.Zero);
-                }
-
-                public static void MiddleDown()
-                {
-                    mouse_event(MouseEventFlag.RightDown, 0, 0, 0, UIntPtr.Zero);
-                }
-
-                public static void MiddleUp()
-                {
-                    mouse_event(MouseEventFlag.RightUp, 0, 0, 0, UIntPtr.Zero);
-                }
-
-       
-      
-                 Form2 b = new Form2();
-
-                private void button1_Click_2(object sender, EventArgs e)
-                {
-                    b.ShowDialog();
-                }
-
               
         
                 

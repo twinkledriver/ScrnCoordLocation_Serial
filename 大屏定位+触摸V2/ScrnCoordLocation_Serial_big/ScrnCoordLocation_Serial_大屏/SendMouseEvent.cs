@@ -4,7 +4,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace WindowsHook
+namespace WindowsHook               //模拟鼠标的文件
 {
 	public class SendMouseEvent
 	{
