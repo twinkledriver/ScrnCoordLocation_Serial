@@ -1,0 +1,13 @@
+H:\Microsoft Visual Studio 2008工程文件\自定义按钮控件\MyButton\bin\Debug\MyButton.dll
+H:\Microsoft Visual Studio 2008工程文件\自定义按钮控件\MyButton\bin\Debug\MyButton.pdb
+H:\Microsoft Visual Studio 2008工程文件\自定义按钮控件\MyButton\obj\Debug\ResolveAssemblyReference.cache
+H:\Microsoft Visual Studio 2008工程文件\自定义按钮控件\MyButton\obj\Debug\MyButton.UserControl1.resources
+H:\Microsoft Visual Studio 2008工程文件\自定义按钮控件\MyButton\obj\Debug\MyButton.csproj.GenerateResource.Cache
+H:\Microsoft Visual Studio 2008工程文件\自定义按钮控件\MyButton\obj\Debug\MyButton.dll
+H:\Microsoft Visual Studio 2008工程文件\自定义按钮控件\MyButton\obj\Debug\MyButton.pdb
+C:\Users\Administrator\Desktop\大屏定位+触摸\ScrnCoordLocation_Serial_big\ScrnCoordLocation_Serial_大屏\MyButton\bin\Debug\MyButton.dll
+C:\Users\Administrator\Desktop\大屏定位+触摸\ScrnCoordLocation_Serial_big\ScrnCoordLocation_Serial_大屏\MyButton\bin\Debug\MyButton.pdb
+C:\Users\Administrator\Desktop\大屏定位+触摸\ScrnCoordLocation_Serial_big\ScrnCoordLocation_Serial_大屏\MyButton\obj\Debug\MyButton.UserControl1.resources
+C:\Users\Administrator\Desktop\大屏定位+触摸\ScrnCoordLocation_Serial_big\ScrnCoordLocation_Serial_大屏\MyButton\obj\Debug\MyButton.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\大屏定位+触摸\ScrnCoordLocation_Serial_big\ScrnCoordLocation_Serial_大屏\MyButton\obj\Debug\MyButton.dll
+C:\Users\Administrator\Desktop\大屏定位+触摸\ScrnCoordLocation_Serial_big\ScrnCoordLocation_Serial_大屏\MyButton\obj\Debug\MyButton.pdb

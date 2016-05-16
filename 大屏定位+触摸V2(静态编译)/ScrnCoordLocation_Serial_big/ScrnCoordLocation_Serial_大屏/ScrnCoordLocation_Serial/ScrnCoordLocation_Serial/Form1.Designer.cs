@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTestSerialPort));
             this.buttonOpenport = new System.Windows.Forms.Button();
             this.ContentBox = new System.Windows.Forms.TextBox();
             this.buttonReset = new System.Windows.Forms.Button();
             this.comboPortNme = new System.Windows.Forms.ComboBox();
             this.comboBaudrate = new System.Windows.Forms.ComboBox();
             this.groupDataReceived = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelReceiveCount = new System.Windows.Forms.Label();
             this.checkBoxAN = new System.Windows.Forms.CheckBox();
             this.checkBoxRHex = new System.Windows.Forms.CheckBox();
@@ -51,10 +47,6 @@
             this.checkBoxSHex = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.groupDataReceived.SuspendLayout();
             this.groupBoxDataSend.SuspendLayout();
@@ -62,7 +54,7 @@
             // 
             // buttonOpenport
             // 
-            this.buttonOpenport.Location = new System.Drawing.Point(361, 22);
+            this.buttonOpenport.Location = new System.Drawing.Point(350, 23);
             this.buttonOpenport.Name = "buttonOpenport";
             this.buttonOpenport.Size = new System.Drawing.Size(75, 23);
             this.buttonOpenport.TabIndex = 0;
@@ -72,18 +64,18 @@
             // 
             // ContentBox
             // 
-            this.ContentBox.Location = new System.Drawing.Point(6, 52);
+            this.ContentBox.Location = new System.Drawing.Point(6, 20);
             this.ContentBox.Multiline = true;
             this.ContentBox.Name = "ContentBox";
             this.ContentBox.ReadOnly = true;
             this.ContentBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ContentBox.Size = new System.Drawing.Size(309, 219);
+            this.ContentBox.Size = new System.Drawing.Size(486, 238);
             this.ContentBox.TabIndex = 1;
             this.ContentBox.TextChanged += new System.EventHandler(this.ContentBox_TextChanged);
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(361, 58);
+            this.buttonReset.Location = new System.Drawing.Point(431, 23);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(75, 23);
             this.buttonReset.TabIndex = 2;
@@ -130,43 +122,21 @@
             // 
             // groupDataReceived
             // 
-            this.groupDataReceived.Controls.Add(this.label4);
-            this.groupDataReceived.Controls.Add(this.label3);
             this.groupDataReceived.Controls.Add(this.labelReceiveCount);
             this.groupDataReceived.Controls.Add(this.checkBoxAN);
             this.groupDataReceived.Controls.Add(this.checkBoxRHex);
             this.groupDataReceived.Controls.Add(this.ContentBox);
             this.groupDataReceived.Location = new System.Drawing.Point(12, 67);
             this.groupDataReceived.Name = "groupDataReceived";
-            this.groupDataReceived.Size = new System.Drawing.Size(332, 264);
+            this.groupDataReceived.Size = new System.Drawing.Size(498, 264);
             this.groupDataReceived.TabIndex = 6;
             this.groupDataReceived.TabStop = false;
             this.groupDataReceived.Text = "收到的数据   ";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(136, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 14);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "y轴";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(102, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 14);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "x轴";
-            // 
             // labelReceiveCount
             // 
             this.labelReceiveCount.AutoSize = true;
-            this.labelReceiveCount.Location = new System.Drawing.Point(244, -1);
+            this.labelReceiveCount.Location = new System.Drawing.Point(404, 1);
             this.labelReceiveCount.Name = "labelReceiveCount";
             this.labelReceiveCount.Size = new System.Drawing.Size(71, 12);
             this.labelReceiveCount.TabIndex = 9;
@@ -195,6 +165,7 @@
             this.checkBoxRHex.TabIndex = 3;
             this.checkBoxRHex.Text = "Hex视图";
             this.checkBoxRHex.UseVisualStyleBackColor = true;
+            this.checkBoxRHex.CheckedChanged += new System.EventHandler(this.checkBoxRHex_CheckedChanged);
             // 
             // labelPortNME
             // 
@@ -223,7 +194,7 @@
             this.groupBoxDataSend.Controls.Add(this.checkBoxSHex);
             this.groupBoxDataSend.Location = new System.Drawing.Point(12, 337);
             this.groupBoxDataSend.Name = "groupBoxDataSend";
-            this.groupBoxDataSend.Size = new System.Drawing.Size(434, 70);
+            this.groupBoxDataSend.Size = new System.Drawing.Size(498, 70);
             this.groupBoxDataSend.TabIndex = 9;
             this.groupBoxDataSend.TabStop = false;
             this.groupBoxDataSend.Text = "发送数据   ";
@@ -231,7 +202,7 @@
             // lableSendCount
             // 
             this.lableSendCount.AutoSize = true;
-            this.lableSendCount.Location = new System.Drawing.Point(323, 1);
+            this.lableSendCount.Location = new System.Drawing.Point(404, 1);
             this.lableSendCount.Name = "lableSendCount";
             this.lableSendCount.Size = new System.Drawing.Size(71, 12);
             this.lableSendCount.TabIndex = 4;
@@ -239,7 +210,7 @@
             // 
             // buttonSend
             // 
-            this.buttonSend.Location = new System.Drawing.Point(349, 29);
+            this.buttonSend.Location = new System.Drawing.Point(417, 29);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(75, 23);
             this.buttonSend.TabIndex = 3;
@@ -253,7 +224,7 @@
             this.SendBox.Multiline = true;
             this.SendBox.Name = "SendBox";
             this.SendBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.SendBox.Size = new System.Drawing.Size(326, 44);
+            this.SendBox.Size = new System.Drawing.Size(405, 44);
             this.SendBox.TabIndex = 2;
             // 
             // checkBoxSN
@@ -278,74 +249,37 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(361, 153);
+            this.textBox1.Location = new System.Drawing.Point(523, 42);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 10;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(361, 222);
+            this.textBox2.Location = new System.Drawing.Point(523, 87);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 11;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(361, 266);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 16);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "鼠标定位";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(384, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "光标-X坐标";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(384, 193);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "光标-Y坐标";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(358, 295);
+            this.button1.Location = new System.Drawing.Point(533, 136);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "触摸测试";
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormTestSerialPort
             // 
             this.AcceptButton = this.buttonSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 422);
+            this.ClientSize = new System.Drawing.Size(686, 422);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBoxDataSend);
             this.Controls.Add(this.labelBaudrate);
             this.Controls.Add(this.labelPortNME);
@@ -353,9 +287,7 @@
             this.Controls.Add(this.comboPortNme);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonOpenport);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupDataReceived);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTestSerialPort";
             this.Text = "串口调试助手 V0.1a";
             this.Load += new System.EventHandler(this.FormTestSerialPort_Load);
@@ -389,12 +321,6 @@
         private System.Windows.Forms.Label lableSendCount;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
     }
 }

@@ -333,7 +333,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "触摸测试";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormTestSerialPort
             // 
